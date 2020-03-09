@@ -69,7 +69,17 @@ namespace MVCLaboratorio.Controllers
                                     int repro,
                                     string url)
         {
-            return View();
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@idVideo", idVideo));
+            parametros.Add(new SqlParameter("@titulo", titulo));
+            parametros.Add(new SqlParameter("@repro", repro));
+            parametros.Add(new SqlParameter("@url", url));
+
+            BaseHelper.ejecutarSentencia("sp_video_edit",
+                                          CommandType.StoredProcedure,
+                                          parametros);
+
+            return RedirectToAction("Index", "Video");
         }
 
     }
