@@ -8,6 +8,15 @@
 </head>
 <body>
     <h1>Lista de videos registrados
+    <%foreach (System.Data.DataRow ren in ((System.Data.DataTable)ViewData["datavideo"]).Rows)
+      {%>
+      <p>Titulo: <%: ren["titulo"].ToString() %> </p>
+      <p>No.Reproducciones: <%: ren["reproducciones"].ToString() %> </p>
+      <p>Url: <%: ren["url"].ToString() %> </p>
+
+      <iframe width="560" height="315" src="<%: ren["url"].ToString() %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
+      <%} %>
     </h1>
 </body>
 </html>

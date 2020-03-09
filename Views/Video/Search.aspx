@@ -5,10 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Search</title>
+    <meta charset="UTF-8">
+  <meta name="description" content="ASP.NET MVC 2 CRUD Video">
+  <meta name="keywords" content="ASP:NET,MVC,Facpya">
+  <meta name="author" content="Erick Medellin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div>
-    
-    </div>
+   <form action="/Video/Create" method="post">
+    <fieldset>
+    <legend>Datos del video</legend>
+    <label for="idVideo">IdVideo</label>
+    <input type="text" name="idVideo" />
+
+    <input type="submit" value="Buscar"/>
+    </fieldset>
+    </form>
 </body>
 </html>

@@ -30,5 +30,6 @@
     <input type="text" name="url" />
 
     <input type="submit" value="Modificar" />
+    </fieldset>
 </body>
 </html>

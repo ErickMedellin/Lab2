@@ -37,4 +37,17 @@ END
 
 execute sp_video_edit 1,'eminem',45000,'youtube.com'
 
+CREATE PROCEDURE sp_video_buscar
+@idVideo int
+AS
+BEGIN
+	SELECT * FROM video WHERE idVideo=@idVideo
+END
+
+CREATE PROCEDURE sp_video_todos
+AS
+BEGIN
+	SELECT * FROM video
+END
+
 SELECT * FROM video;

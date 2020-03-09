@@ -81,6 +81,21 @@ namespace MVCLaboratorio.Controllers
 
             return RedirectToAction("Index", "Video");
         }
-
+        public ActionResult Search()
+        {
+            return View();
+        }
+        public ActionResult Search(int idVideo)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@idVideo", idVideo));
+            ViewData["datavideo"] = BaseHelper.ejecutarConsulta("sp_video_buscar", CommandType.StoredProcedure);
+            return View("Resultado");
+        }
+        public ActionResult SeeAll()
+        {
+            ViewData["datavideo"] = BaseHelper.ejecutarConsulta("sp_video_todos",CommandType.StoredProcedure);
+            return View();
+        }
     }
 }
